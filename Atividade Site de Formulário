@@ -1,1 +1,56 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" contente:="width=device-width, intinal-scale=1.0">
+	<meta htpp-equiv="X-UA-Compatible" contente"IE-edge">
+	<title> Rafael Garcia </title>
+</head>
 
+<style>
+
+</style>
+
+<body>
+
+	<div class="cabeçalho">
+		<h1> Bem-vindos ao meu Sitio </h1>
+		<p> Portifólio do Rafael Garcia </p>
+	</div>
+	<nav>
+		<a herf="#sobre" target="_self">Sobre</a>
+		<a herf="#projetos" target="_self">Projetos</a>
+		<a herf="#contato" target="_self">Contato</a>
+	</nav>
+
+	<div id="main">
+		<section id="sobre">
+			<h2> Olá, Eu sou o Rafael </h2>
+			<p> Meu Sitio </p>
+		</section>
+
+		<section id="projetos">
+			<h3> Meus Projetos </h3>
+			<p> Está está aqui </p>
+		</section>
+
+		<section id="contatos">
+			<h4> Meus Contatos </h4>
+			<p> Está está bem aqui </p>
+		</section>
+	</div>
+
+	
+
+		
+			
+
+
+
+
+
+
+
+
+
+ 
