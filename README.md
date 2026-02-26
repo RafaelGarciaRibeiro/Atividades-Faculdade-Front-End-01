@@ -1,2 +1,2 @@
 # Atividades-Faculdade-Front-End-01
-Atividade - Coleção de Cartas Pokémons
+Atividades - Aqui você encontra as Atividade e Trabalhos feito em aula.  
