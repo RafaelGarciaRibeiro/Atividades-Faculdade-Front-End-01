@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+	<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta htpp-equiv="X-UA-Compatible" content"IE=edge">
+	<title>Materiais das Aulas</title>
+</head>
+
+<style>
+	header{
+		background-color: #222;
+        color: white;
+        text-align: center;
+        padding: 1px;
+	}
+	body{
+		margin: 0;
+		padding: 0;
+	}
+	h2{
+		font-size: 30px;
+		padding: 10px;
+		margin-left: 0px;
+		margin-top: 0px;
+	}
+	p{
+		font-size: 20px;
+		padding: 10px;
+		margin-left: 10px;
+		margin-top: -30px;
+	}
+	nav{
+		font-size: 20px;
+		text-align: left;
+		background-color: gray;
+		padding: 10px ;
+	}
+	nav a{
+		color: white;
+		margin: 10px;
+		text-decoration: none;
+	}
+	.main ul{
+		font-size: 20px;
+		margin-top: -20px;
+	}
+	.main li{
+		margin-top: 10px;
+		padding: 1px;
+		font-size: 20px;
+	}
+	.circuitos_digitais img {
+    	width: 200px;
+    	display: block;
+    	margin: 20px auto;
+	}
+	section {
+            padding: 20px;
+        }
+
+        article {
+            background-color: #f4f4f4;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        aside {
+            background-color: #ddd;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+
+        .header {
+            background-color: #333;
+        }
+
+        .main {
+            padding: 20px;
+        }
+
+        #footer {
+			
+            background-color: #222;
+            color: white;
+        }
+</style> 
+
+<body>
+	<div class="header">
+		<header>
+			<h1> Bem-vindo ao meu site de Materias e Formulário</h1>
+			<p> Fique à vontade  </p>
+		</header>
+	</div>
+
+	<nav>
+		<a href="#Sobre_Mim" target="_self">Sobre Mim</a>
+		<a href="#circuitos_digitais" target="_self">Circuitos Digitais</a>
+		<a href="#Formulário" target="_self">Formulário</a>
+	</nav>
+
+	<div class="main">
+		<section id="Sobre_Mim" target="_self">
+			<h2>Sobre Mim</h2>
+			<p>Sou <b>Rafael Garcia Ribeiro</b> Aluno da Faculdade Unicesumar em Maringá,
+			estudo Engenharia de Software.</p>
+			<p><b>Adoro</b> aprender <mark>coisas novas</mark> na área da computação. </p>
+			<p>Abaixo estara os conteudos da aulas que mais me marcaram no semestres da Faculdade.</p>
+			<h2>Conteudo Sobre Mim</h2>
+			<ul>
+			 	<li>🌱 Experiencia linguem Pascal.</li>
+				<li>🐍 Estudando PHYTON.</li>
+				<li>👽 Estudando HTML e CSS.</li>
+				<li>🤔 Gosto de aprender coisas novas.</li>
+			</ul>
+		</section>
+
+		<div class="circuitos_digitais">
+			<section id="circuitos_digitais">
+				<h2>Circuito Digital</h2>
+				<p>Circuitos digitais são sistemas eletrônicos que processam informações utilizando apenas dois estados distintos: 
+				   ligado/desligado, alto/baixo ou verdadeiro/falso, representados pelos números binários 1 e 0, respectivamente</p>
+				<img src="Digital_buffer.png" alt="Imagem das Funções Lógicas">
+			</section>
+		</div>
+
+		<section id="Formulário">
+			<h2>Formulário</h2>
+			<form>
+        	<fieldset>
+            	<legend>Envie uma mensagem</legend>
+
+            	<label for="nome">Nome:</label><br>
+            	<input type="text" id="nome" name="nome"><br><br>
+
+            	<label>Gênero:</label><br>
+            	<input type="radio" name="genero"> Masculino
+            	<input type="radio" name="genero"> Feminino<br><br>
+
+            	<label>Interesses:</label><br>
+            	<input type="checkbox"> Programação
+            	<input type="checkbox"> Robótica<br><br>
+
+            	<label for="area">Área:</label>
+            	<select id="area">
+            	    <option>Front-End</option>
+                	<option>Back-End</option>
+                	<option>Banco de Dados</option>
+            	</select><br><br>
+
+            	<label for="linguagem">Linguagem favorita:</label>
+            	<input list="linguagens" name="linguagem">
+            	<datalist id="linguagens">
+                <option value="Java">
+                <option value="Python">
+                <option value="JavaScript">
+            </datalist><br><br>
+
+            	<label for="mensagem">Mensagem:</label><br>
+           		<textarea name="mensagem" rows="5" cols="30"></textarea><br><br>
+
+            	<input type="submit" value="Enviar">
+            	<input type="button" value="Botão">
+            	<button>Botão HTML</button>
+
+        	</fieldset>
+   	 		</form>
+    		<a href="mailto:rafaelgarciarbeiro123@gmail.com">Enviar Email</a>
+		</section>
+	</div>
+
+	<div id="footer">
+		<footer>
+    	<h2>Rodapé</h2>
+    	<h2>Final do Site</h2>
+		</footer>
+	</div>
+</body>
+</html>
