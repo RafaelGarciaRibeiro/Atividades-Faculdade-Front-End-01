@@ -12,14 +12,14 @@
 		text-align: center;
 		font-size: 43px;
 		font-weight: bold;
-		border 2px; solid #000faf;
+		border: 2px solid #000faf;
 	}
 
 	.painel {
 		background: #aaa;
 		padding: 10px;
-		margin-botton: 15px;
-		border 2px; solid #000faf;
+		margin-bottom: 15px;
+		border: 2px solid #000faf;
 	}
 
 	.total {
@@ -36,7 +36,7 @@
 		<div class="row mt-3">
 			
 			<div class="col-md-7">
-				<h3 class="text-white"> <span class="badge text-bg-prymari"> Sua Compra </span></h3>
+				<h3 class="text-white"> <span class="badge text-bg-primary"> Sua Compra </span></h3>
 				<ul id="lista" class="list-group lista"></ul>
 			</div>
 			
@@ -53,14 +53,15 @@
 					<br>
 					<div class="painel">
 					<label> Quantidade <label>
-					<input type="number" id="qtd" class="form-control">
+					<input type="number" id="qtd" class="form-control" value="1">
 					</div>
-					<button class="btn btn-success w-100" onclick"addProduto()">
+					<button class="btn btn-success w-100" onclick="addProduto()">
 						 Adicionar Produto
 					</button>
+					<audio id="somClick" src="bip.mp3"></audio>
 			</div>
 		</div>
 	</div>
-	
+<script src="script.js"></script>	
 </body>
 </html>
