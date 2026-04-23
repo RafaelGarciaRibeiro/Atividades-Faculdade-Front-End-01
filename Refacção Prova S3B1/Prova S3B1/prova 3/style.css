@@ -1,0 +1,165 @@
+/* ==========================================
+   CSS GLOBAL - Questão 02
+   ========================================== */
+
+/* Cor de fundo suave aplicado ao background (solicitado) */
+body {
+    background-color: #f0f4f8; 
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    text-align: center; /* text-align solicitado */
+}
+
+/* ==========================================
+   ESTILOS DO CABEÇALHO E NAVEGAÇÃO
+   ========================================== */
+header {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+#logo-design {
+    height: 60px; /* Tamanho para o logo decorativo */
+}
+
+header h1 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #1a202c;
+    margin: 0;
+}
+
+/* Estilização de navegação (Q01 e propriedades solicitadas) */
+nav {
+    margin-top: 15px;
+    font-weight: bold; /* font-weight solicitado */
+}
+
+nav a {
+    color: #0056b3; /* color solicitado */
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 16px; /* font-size solicitado */
+}
+
+nav a:hover {
+    color: #004494;
+    text-decoration: underline;
+}
+
+/* ==========================================
+   ESTILOS DE SEÇÃO E CONTEÚDO
+   ========================================== */
+
+/* Estilização de classe para secções (solicitado - Q02) */
+.secao-copa {
+    background-color: #ffffff; /* Cor de fundo suave para cada secção (solicitado) */
+    border-radius: 15px; /* border-radius solicitado */
+    padding: 25px;
+    margin: 20px auto; /* Itens minimamente espaçados (solicitado) */
+    max-width: 800px;
+    text-align: left; /* Alinhamento interno do texto */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* Alteração de tamanho de fonte para destacar titulos das seções (solicitado - Q02) */
+.secao-copa h2 {
+    font-size: 26px; /* Aumento de fonte */
+    font-weight: bold;
+    color: #1a202c;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 10px;
+}
+
+.secao-copa p {
+    color: #4a5568;
+    line-height: 1.6;
+}
+
+/* ==========================================
+   ESTILOS DE REVELAÇÃO (Questão 04)
+   ========================================== */
+.revelacao-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+#img-perfil {
+    max-width: 250px;
+    border-radius: 50%; /* Faz a imagem redonda */
+    border: 5px solid #e2e8f0;
+    transition: all 0.5s ease; /* Transição suave para a troca de imagem */
+}
+
+.perfil-dados {
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Classe CSS visual para os placeholders */
+.placeholder {
+    color: #a0aec0;
+    font-style: italic;
+    background: none;
+    border-radius: 0;
+}
+
+/* Classe CSS final para a estilização (solicitado - Q04) */
+.card-text {
+    color: #1a202c;
+    font-style: normal;
+    background: none;
+    border-radius: 0;
+}
+
+/* ==========================================
+   ESTILOS DE BOTÃO E TABELA
+   ========================================== */
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px; /* border-radius solicitado */
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo para a imagem da tabela inserida dinamicamente */
+.tabela-imagem-inserida {
+    display: block;
+    max-width: 90%;
+    margin: 30px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+#img-perfil {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #e2e8f0;
+    background-color: #f8f9fa; /* Fundo cinza claro caso a imagem demore a carregar */
+    transition: all 0.5s ease;
+}

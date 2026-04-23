@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grupos - Copa do Mundo 2026</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>🏆 Copa do Mundo FIFA 2026</h1>
+        <p>Conheça os detalhes e curiosidades das seleções</p>
+    </header>
+
+    <main>
+        <section class="grupos-container">
+            
+            <div id="cartao-grupo1" class="card-grupo">
+                <h2>🅰️ Grupo A</h2>
+                <h3>Seleções</h3>
+                <ul>
+                    <li>México</li>
+                    <li>África do Sul</li>
+                    <li>Coreia do Sul</li>
+                    <li>República Tcheca</li>
+                </ul>
+                <details>
+                    <summary>Saiba Mais</summary>
+                    <p><strong>Fatos:</strong> O jogo de abertura será México x África do Sul. Confrontos entre Coreia do Sul e seleções europeias já ocorreram em várias Copas, com histórico equilibrado.</p>
+                </details>
+            </div>
+
+            <div id="cartao-grupo2" class="card-grupo">
+                <h2>🅱️ Grupo B</h2>
+                <h3>Seleções</h3>
+                <ul>
+                    <li>Canadá</li>
+                    <li>Suíça</li>
+                    <li>Catar</li>
+                    <li>Vaga Europeia (Bósnia)</li>
+                </ul>
+                <details>
+                    <summary>Saiba Mais</summary>
+                    <p><strong>Fatos:</strong> O Canadá joga em casa, fator importante de desempenho. Catar e Suíça já se enfrentaram recentemente em amistosos internacionais.</p>
+                </details>
+            </div>
+
+            <div id="cartao-grupo3" class="card-grupo">
+                <h2>🅲 Grupo C</h2>
+                <h3>Seleções</h3>
+                <ul>
+                    <li>Brasil</li>
+                    <li>Marrocos</li>
+                    <li>Haiti</li>
+                    <li>Escócia</li>
+                </ul>
+                <details>
+                    <summary>Saiba Mais</summary>
+                    <p><strong>Fatos:</strong> Brasil, Marrocos e Escócia já dividiram grupo em 1998. Brasil nunca perdeu para a Escócia em Copas.</p>
+                </details>
+            </div>
+
+        </section>
+
+        <div class="area-botoes">
+            <button onclick="proximoGrupo()">Próximo</button>
+        </div>
+
+        <hr>
+
+        <section class="sessao-jogadores">
+            <h2>Adição de Jogadores (Questão 04)</h2>
+            <div class="area-botoes">
+                <button onclick="add()">Adicionar Novo Jogador</button>
+            </div>
+            
+            <div id="jogadores-container" class="container-jogadores">
+                <div class="card-jogador">
+                    <img src="_vinicius_junior.png" alt="Vinícius Jr">
+                    <div class="jogador-info">
+                        <p><strong>Nome:</strong> Vinícius José P. O. Júnior</p>
+                        <p><strong>Posição:</strong> Ponta-esquerda</p>
+                        <p><strong>Rank:</strong> 9,5</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

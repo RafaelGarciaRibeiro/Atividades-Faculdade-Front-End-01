@@ -1,0 +1,136 @@
+/* Cor de fundo suave (Obrigatório) */
+body {
+    background-color: #f4f7f6;
+    font-family: Arial, sans-serif;
+    color: #333; /* color (Obrigatório) */
+    margin: 0;
+    padding: 20px;
+}
+
+/* Cabeçalho centralizado (Obrigatório) */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    color: #0056b3;
+}
+
+/* Container Flex para alinhar e espaçar os itens (Obrigatório) */
+.grupos-container {
+    display: flex; /* display flex (Obrigatório) */
+    justify-content: center; /* justify-content (Obrigatório) */
+    align-items: flex-start; /* align-items (Obrigatório) */
+    gap: 30px; /* Itens espaçados entre si */
+    flex-wrap: wrap; /* Permite quebrar linha em telas pequenas */
+}
+
+/* Estilização de classe para os Cartões (Obrigatório) */
+.card-grupo {
+    background-color: #ffffff; /* background-color (Obrigatório) */
+    border: 2px solid #e0e0e0; /* border (Obrigatório) */
+    border-radius: 12px; /* border-radius (Obrigatório) */
+    padding: 25px; /* padding (Obrigatório) */
+    width: 280px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.card-grupo:hover {
+    transform: translateY(-5px);
+}
+
+.card-grupo h2 {
+    margin-top: 0;
+    color: #1a202c;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 10px;
+}
+
+.card-grupo ul {
+    padding-left: 20px;
+}
+
+.card-grupo li {
+    margin-bottom: 8px;
+}
+
+/* Estilização do <details> */
+details {
+    margin-top: 15px;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+}
+
+summary {
+    font-weight: bold;
+    cursor: pointer;
+    color: #0056b3;
+}
+
+/* =========================================
+   ESTILOS EXTRAS (Botões e Área da Q04)
+   ========================================= */
+.area-botoes {
+    text-align: center;
+    margin: 30px 0;
+}
+
+button {
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #004494;
+}
+
+hr {
+    border: 1px solid #ddd;
+    margin: 40px 0;
+}
+
+.sessao-jogadores {
+    text-align: center;
+}
+
+.container-jogadores {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card-jogador {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 15px;
+    width: 250px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.card-jogador img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #f4f7f6;
+    margin-bottom: 15px;
+}
+
+.jogador-info p {
+    margin: 5px 0;
+    font-size: 14px;
+}
