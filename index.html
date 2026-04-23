@@ -2,63 +2,148 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Meus Sites</title>
 
 <style>
-body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #9b59b6, #6c3483);
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
+    /* Importando uma fonte moderna do Google Fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
-.container {
-    background-color: white;
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    text-align: center;
-    width: 350px;
-}
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
 
-h1 {
-    margin-bottom: 10px;
-    color: #6c3483;
-}
+    body {
+        font-family: 'Poppins', sans-serif;
+        /* Gradiente de fundo mais vibrante e moderno */
+        background: linear-gradient(135deg, #8E2DE2, #4A00E0);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        color: #333;
+    }
 
-p {
-    color: #666;
-    margin-bottom: 20px;
-}
+    .container {
+        background-color: rgba(255, 255, 255, 0.98);
+        padding: 40px 30px;
+        border-radius: 20px;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        width: 90%;
+        max-width: 420px;
+    }
 
-ul {
-    list-style: none;
-    padding: 0;
-}
+    h1 {
+        margin-bottom: 5px;
+        color: #4A00E0;
+        font-size: 1.8rem;
+        font-weight: 600;
+    }
 
-li {
-    margin: 10px 0;
-}
+    p {
+        color: #777;
+        margin-bottom: 25px;
+        font-size: 0.95rem;
+    }
 
-a {
-    display: block;
-    text-decoration: none;
-    background-color: #9b59b6;
-    color: white;
-    padding: 12px;
-    border-radius: 8px;
-    transition: 0.3s;
-    font-weight: bold;
-}
+    ul {
+        list-style: none;
+        padding: 0;
+    }
 
-a:hover {
-    background-color: #6c3483;
-    transform: scale(1.05);
-}
+    li {
+        margin: 12px 0;
+    }
+
+    a {
+        display: block;
+        text-decoration: none;
+        /* Botões com gradiente suave */
+        background: linear-gradient(135deg, #9b59b6, #8e44ad);
+        color: white;
+        padding: 14px;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        font-weight: 600;
+        font-size: 0.95rem;
+        box-shadow: 0 4px 10px rgba(142, 68, 173, 0.2);
+    }
+
+    a:hover {
+        /* Efeito de "levitação" e sombra mais forte no hover */
+        background: linear-gradient(135deg, #8e44ad, #732d91);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 15px rgba(142, 68, 173, 0.4);
+    }
+
+    /* Estilização da seção recolhível (Minhas Provas) */
+    details {
+        margin-top: 25px;
+        background-color: #f8f9fa;
+        border-radius: 10px;
+        border: 1px solid #eaeaea;
+        overflow: hidden;
+    }
+
+    summary {
+        cursor: pointer;
+        font-weight: 600;
+        color: #4A00E0;
+        padding: 15px;
+        background-color: #f1f3f5;
+        transition: background-color 0.3s ease;
+        list-style: none; /* Remove a seta padrão em navegadores modernos */
+    }
+
+    /* Adicionando um ícone customizado de "abrir/fechar" */
+    summary::after {
+        content: '+';
+        float: right;
+        font-size: 1.2rem;
+        color: #4A00E0;
+        line-height: 1;
+    }
+
+    details[open] summary::after {
+        content: '−';
+    }
+
+    summary:hover {
+        background-color: #e9ecef;
+    }
+
+    /* Esconde a seta padrão no Safari/Chrome mais antigos */
+    summary::-webkit-details-marker {
+        display: none;
+    }
+
+    details ul {
+        padding: 15px;
+        margin: 0;
+    }
+
+    details li {
+        margin: 8px 0;
+    }
+
+    /* Links dentro de 'Minhas Provas' com visual ligeiramente diferente (secundário) */
+    details a {
+        background: white;
+        color: #4A00E0;
+        border: 1px solid #4A00E0;
+        box-shadow: none;
+        padding: 10px;
+    }
+
+    details a:hover {
+        background: #4A00E0;
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(74, 0, 224, 0.2);
+    }
 </style>
 
 </head>
@@ -71,10 +156,21 @@ a:hover {
 
     <ul>
         <li><a href="Atividades Coleção de Cartas Porkémons/index.html">Atividade site colecionador (atividade 1)</a></li>
-	<li><a href="Atividades Materiais das Aulas/Materiais das aulas.html">Atividades Materiais das Aulas (atividade 2)</a></li>
-	<li><a href="Atividades Correção do CSS/Css.html">Atividades Correção do CSS DaisyUI (atividade 3)</a></li>
-	<li><a href="Atividade Correção do CSS Bootstrap/atividade-bootstrap.html">Atividades Correção do CSS Bootstrap (atividade 4)</a></li>
+        <li><a href="Atividades Materiais das Aulas/Materiais das aulas.html">Atividades Materiais das Aulas (atividade 2)</a></li>
+        <li><a href="Atividades Correção do CSS/Css.html">Atividades Correção do CSS DaisyUI (atividade 3)</a></li>
+        <li><a href="Atividade Correção do CSS Bootstrap/atividade-bootstrap.html">Atividades Correção do CSS Bootstrap (atividade 4)</a></li>
+        <li><a href="Atividade Bichinho/bichinho.html">Atividade Bichinho</a></li>
+        <li><a href="Atividade Projeto Caixa Mercado/projeto_sala.html">Atividade Caixa Mercado</a></li>
     </ul>
+
+    <details>
+        <summary>Minhas Provas</summary>
+        <ul>
+            <li><a href="Prova S3B1/prova 1/index.html">Prova 1</a></li>
+            <li><a href="Prova S3B1/prova 2/index.html">Prova 2</a></li>
+            <li><a href="Prova S3B1/prova 3/index.html">Prova 3</a></li>
+        </ul>
+    </details>
 </div>
 
 </body>
