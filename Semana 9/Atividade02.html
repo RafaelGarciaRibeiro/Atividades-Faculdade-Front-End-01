@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Temperatura</title>
+    <style>
+        /* Reset para layout limpo e quadrado */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body {
+            background-color: #ffffff; /* Fundo branco puro */
+            display: flex;
+            justify-content: center;
+            padding-top: 50px;
+        }
+
+        .container {
+            border: 1px solid #000; /* Borda preta simples */
+            width: 300px;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            text-align: left;
+            text-transform: uppercase;
+        }
+
+        .campo {
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-size: 13px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input {
+            padding: 8px;
+            border: 1px solid #000; /* Borda sólida sem raio */
+            font-size: 16px;
+            outline: none;
+        }
+
+        /* Indicador visual simples de foco */
+        input:focus {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Conversor</h1>
+
+        <div class="campo">
+            <label for="celsius">Celsius (°C)</label>
+            <input type="number" id="celsius" step="0.1">
+        </div>
+
+        <div class="campo">
+            <label for="fahrenheit">Fahrenheit (°F)</label>
+            <input type="number" id="fahrenheit" step="0.1">
+        </div>
+    </div>
+
+    <script>
+        const celsius = document.getElementById("celsius");
+        const fahrenheit = document.getElementById("fahrenheit");
+
+        celsius.addEventListener("input", () => {
+            if (celsius.value === "") {
+                fahrenheit.value = "";
+                return;
+            }
+            let c = Number(celsius.value);
+            let f = (c * 9/5) + 32;
+            fahrenheit.value = f.toFixed(2);
+        });
+
+        fahrenheit.addEventListener("input", () => {
+            if (fahrenheit.value === "") {
+                celsius.value = "";
+                return;
+            }
+            let f = Number(fahrenheit.value);
+            let c = (f - 32) * 5/9;
+            celsius.value = c.toFixed(2);
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinity Bank - Crédito Eventos</title>
+    <style>
+        /* Reset para design limpo, reto e seco */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body {
+            background-color: #ffffff; /* Fundo branco puro */
+            display: flex;
+            justify-content: center;
+            padding-top: 40px;
+        }
+
+        .container {
+            border: 1px solid #000; /* Borda preta simples */
+            width: 320px;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            text-align: left;
+            text-transform: uppercase;
+            border-bottom: 2px solid #000;
+            padding-bottom: 5px;
+        }
+
+        .campo {
+            margin-bottom: 12px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-size: 11px;
+            font-weight: bold;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+        }
+
+        input, select {
+            padding: 8px;
+            border: 1px solid #000; /* Elementos quadrados */
+            font-size: 14px;
+            outline: none;
+            background: #fff;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #000; /* Botão preto sólido */
+            color: #fff;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+            text-transform: uppercase;
+        }
+
+        #resultado {
+            margin-top: 20px;
+            font-size: 13px;
+            line-height: 1.8;
+            padding-top: 10px;
+            border-top: 1px dashed #000; /* Divisor simples */
+        }
+
+        .destaque {
+            font-weight: 900;
+            font-size: 15px;
+            margin-top: 5px;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Crédito Eventos</h1>
+
+        <div class="campo">
+            <label>Pacote de Serviço</label>
+            <select id="pacote">
+                <option value="50">Standard (R$ 50,00)</option>
+                <option value="80">Premium (R$ 80,00)</option>
+                <option value="120">Infinity Deluxe (R$ 120,00)</option>
+            </select>
+        </div>
+
+        <div class="campo">
+            <label>Quantidade de Pessoas</label>
+            <input type="number" id="pessoas" placeholder="0">
+        </div>
+
+        <button onclick="calcularOrcamento()">Calcular Orçamento</button>
+
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        function calcularOrcamento() {
+            const valorPorPessoa = Number(document.getElementById("pacote").value);
+            const qtdPessoas = Number(document.getElementById("pessoas").value);
+            const divResultado = document.getElementById("resultado");
+
+            if (!qtdPessoas || qtdPessoas <= 0) {
+                divResultado.innerHTML = "INFORME UMA QUANTIDADE VÁLIDA.";
+                return;
+            }
+
+            // 1. Cálculo Base
+            let custoBruto = valorPorPessoa * qtdPessoas;
+
+            // 2. Taxa de Serviço (10%)
+            let taxaServico = custoBruto * 0.10;
+            let subtotal = custoBruto + taxaServico;
+
+            // 3. Desconto Fidelidade (> 100 pessoas, 5%)
+            let desconto = 0;
+            if (qtdPessoas > 100) {
+                desconto = subtotal * 0.05;
+            }
+
+            let totalFinal = subtotal - desconto;
+
+            divResultado.innerHTML = 
+                "CUSTO BRUTO: R$ " + custoBruto.toFixed(2) + "<br>" +
+                "TAXA SERVIÇO (10%): R$ " + taxaServico.toFixed(2) + "<br>" +
+                "DESCONTO APLICADO: R$ " + desconto.toFixed(2) + "<br>" +
+                "<span class='destaque'>TOTAL FINAL: R$ " + totalFinal.toFixed(2) + "</span>";
+        }
+    </script>
+
+</body>
+</html>

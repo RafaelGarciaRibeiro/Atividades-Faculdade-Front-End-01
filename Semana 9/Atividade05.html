@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lista VIP - Simples</title>
+
+<style>
+    /* Reset para formas retas e secas */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+    }
+
+    body {
+        background-color: #ffffff; /* Fundo branco puro */
+        display: flex;
+        justify-content: center;
+        padding-top: 50px;
+    }
+
+    .card {
+        border: 1px solid #000; /* Borda preta simples */
+        width: 450px;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 18px;
+        text-align: left;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        border-bottom: 2px solid #000;
+        padding-bottom: 5px;
+    }
+
+    .topo {
+        display: flex;
+        gap: 0; /* Unindo input e botão */
+        margin-bottom: 20px;
+    }
+
+    input {
+        flex: 1;
+        padding: 8px;
+        border: 1px solid #000;
+        font-size: 14px;
+        outline: none;
+    }
+
+    button {
+        padding: 8px 15px;
+        border: 1px solid #000;
+        background: #fff; /* Fundo branco para botões */
+        cursor: pointer;
+        font-size: 12px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    /* Inverter cores no botão principal para destaque básico */
+    .add {
+        background: #000;
+        color: #fff;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 5px;
+        border-bottom: 1px solid #000;
+    }
+
+    .riscado {
+        text-decoration: line-through;
+        color: #777;
+    }
+
+    .acoes {
+        display: flex;
+        gap: 5px;
+    }
+
+    /* Estilo neutro para botões de ação */
+    .concluir, .editar, .excluir {
+        background: #fff;
+        border: 1px solid #000;
+    }
+</style>
+</head>
+<body>
+
+<div class="card">
+    <h1>Convidados VIP</h1>
+
+    <div class="topo">
+        <input type="text" id="nome" placeholder="NOME DO CONVIDADO">
+        <button class="add" onclick="adicionar()">Adicionar</button>
+    </div>
+
+    <ul id="lista"></ul>
+</div>
+
+<script>
+    function adicionar(){
+        const input = document.getElementById("nome");
+        const nome = input.value.trim();
+
+        if(nome === ""){
+            alert("Digite um nome!");
+            return;
+        }
+
+        const li = document.createElement("li");
+
+        const span = document.createElement("span");
+        span.innerText = nome;
+
+        const acoes = document.createElement("div");
+        acoes.classList.add("acoes");
+
+        // Botão concluir
+        const concluir = document.createElement("button");
+        concluir.innerText = "Check";
+        concluir.classList.add("concluir");
+        concluir.onclick = () => span.classList.toggle("riscado");
+
+        // Botão editar
+        const editar = document.createElement("button");
+        editar.innerText = "Edit";
+        editar.classList.add("editar");
+        editar.onclick = () => {
+            const novoNome = prompt("Novo nome:", span.innerText);
+            if(novoNome && novoNome.trim() !== "") span.innerText = novoNome;
+        };
+
+        // Botão excluir
+        const excluir = document.createElement("button");
+        excluir.innerText = "X";
+        excluir.classList.add("excluir");
+        excluir.onclick = () => li.remove();
+
+        acoes.appendChild(concluir);
+        acoes.appendChild(editar);
+        acoes.appendChild(excluir);
+
+        li.appendChild(span);
+        li.appendChild(acoes);
+
+        document.getElementById("lista").appendChild(li);
+        input.value = "";
+    }
+</script>
+
+</body>
+</html>

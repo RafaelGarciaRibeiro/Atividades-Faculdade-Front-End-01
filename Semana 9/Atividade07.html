@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinity Bank - Security Guard</title>
+    <style>
+        /* Reset para design limpo, reto e funcional */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body {
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            padding-top: 40px;
+        }
+
+        .container {
+            border: 1px solid #000;
+            width: 350px;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            text-align: left;
+            text-transform: uppercase;
+            border-bottom: 2px solid #000;
+            padding-bottom: 5px;
+        }
+
+        .campo {
+            margin-bottom: 12px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-size: 11px;
+            font-weight: bold;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+        }
+
+        input {
+            padding: 8px;
+            border: 1px solid #000;
+            font-size: 14px;
+            outline: none;
+            background: #fff;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #000;
+            color: #fff;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+            text-transform: uppercase;
+        }
+
+        #resultado {
+            margin-top: 20px;
+            font-size: 12px;
+            line-height: 1.6;
+            padding-top: 10px;
+            border-top: 1px dashed #000;
+        }
+
+        .info-label {
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .status-valid { color: green; font-weight: bold; }
+        .status-invalid { color: red; font-weight: bold; }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Card Guard</h1>
+
+        <div class="campo">
+            <label>Número do Cartão</label>
+            <input type="text" id="cartao" maxlength="16" placeholder="0000 0000 0000 0000">
+        </div>
+
+        <button onclick="analisarCartao()">Analisar Cartão</button>
+
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        function validarLuhn(numero) {
+            let soma = 0;
+            let deveDobrar = false;
+
+            // Percorre o número de trás para frente
+            for (let i = numero.length - 1; i >= 0; i--) {
+                let digito = parseInt(numero.charAt(i));
+
+                if (deveDobrar) {
+                    digito *= 2;
+                    if (digito > 9) digito -= 9;
+                }
+
+                soma += digito;
+                deveDobrar = !deveDobrar;
+            }
+
+            return (soma % 10) === 0;
+        }
+
+        function identificarBandeira(n) {
+            if (n.startsWith('4')) return "VISA";
+            if (n.startsWith('51') || n.startsWith('55')) return "MASTERCARD";
+            if (n.startsWith('34') || n.startsWith('37')) return "AMEX";
+            if (n.startsWith('6011')) return "DISCOVER";
+            return "DESCONHECIDA";
+        }
+
+        function identificarSetor(primeiroDigito) {
+            const setores = {
+                '1': 'Linhas Aéreas',
+                '2': 'Linhas Aéreas / Outros',
+                '3': 'Viagens e Entretenimento',
+                '4': 'Bancário e Financeiro (Visa)',
+                '5': 'Bancário e Financeiro (Master)',
+                '6': 'Bancário e Comercial',
+                '7': 'Petróleo',
+                '8': 'Saúde e Telecomunicações',
+                '9': 'Atribuição Nacional'
+            };
+            return setores[primeiroDigito] || 'Setor Desconhecido';
+        }
+
+        function analisarCartao() {
+            let num = document.getElementById("cartao").value.replace(/\D/g, '');
+            const res = document.getElementById("resultado");
+
+            if (num.length < 13 || num.length > 16) {
+                res.innerHTML = "TAMANHO INVÁLIDO (USE 13 A 16 DÍGITOS).";
+                return;
+            }
+
+            const eValido = validarLuhn(num);
+            const bandeira = identificarBandeira(num);
+            const setor = identificarSetor(num[0]);
+            const bancoEmissor = num.substring(1, 5); // Simulação conforme enunciado (Dígitos 2 a 5)
+
+            let html = "";
+            html += "<p><span class='info-label'>STATUS:</span> <span class='" + (eValido ? "status-valid" : "status-invalid") + "'>" + (eValido ? "VÁLIDO" : "MATEMATICAMENTE INVÁLIDO") + "</span></p>";
+            html += "<p><span class='info-label'>BANDEIRA:</span> " + bandeira + "</p>";
+            html += "<p><span class='info-label'>SETOR:</span> " + setor + "</p>";
+            html += "<p><span class='info-label'>BANCO (IIN):</span> #" + bancoEmissor + " (PAÍS/EMISSOR)</p>";
+            
+            res.innerHTML = html;
+        }
+    </script>
+
+</body>
+</html>
