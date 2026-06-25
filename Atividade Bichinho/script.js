@@ -22,15 +22,33 @@ function controlador (){
 
             console.log("tempo:",contador);
             
-            if (contador == 30){
+            if (contador == 10){
                 cria.src = estados.puto;
             }
 
-            if(contador == 60){
+            if(contador == 20){
                 cria.src = estados.morto;
             }
         }, 1000);
 }
+btn.addEventListener('click', () => {
+    if (contador >= 20) return; 
 
+    contador = 0; 
+
+    cria.src = estados.comendo; 
+
+    setTimeout(() => {
+        if (contador < 20) {
+            cria.src = estados.alimentado;
+        }
+    }, 1000);
+
+    setTimeout(() => {
+        if (contador < 10) {
+            cria.src = estados.normal;
+        }
+    }, 3000);
+});
 
 controlador();

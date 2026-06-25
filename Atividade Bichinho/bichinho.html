@@ -5,10 +5,26 @@
     </head>
 
     <body>
+        
         <img id="b" src="b_n.png"/>
+        
         <img id="btn" src="btn.png"/>
 
+        <script src="script.js"></script>
     </body>
-
-    <script src="script.js"></script>
+    <style>
+        #b{
+            width: 350px; 
+            margin-bottom: 20px; 
+        }
+        #btn {
+            width: 120px;
+            cursor: pointer; 
+            transition: transform 0.1s; 
+        }
+        #btn:active {
+            transform: scale(0.9); 
+        }
+    </style>
+    
 </html>
